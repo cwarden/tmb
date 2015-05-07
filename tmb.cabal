@@ -1,0 +1,13 @@
+Name:                tmb
+Version:             0.1
+Synopsis:            Identify backups to delete
+Description:         Given a list of timestamps of backups, identifies ones
+                     that are safe to delete, given the desired frequency and
+                     number of backups wanted.
+Author:              Christian G. Warden
+Maintainer:          Christian G. Warden <cwarden@xerus.org>
+Build-Depends:       base, datetime
+Build-Type:          Simple
+
+Executable:          tmb
+Main-is:             tmb.hs
