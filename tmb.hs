@@ -32,11 +32,9 @@ toDelete dates specs = sorted \\ keepDates
 		keepDates = keepers sorted specs
 
 extraBackups :: String -> String
-extraBackups input =
-	let
+extraBackups input = unlines . map toSqlString $ toDelete valid keepSpecs
+	where
 		valid = validDates . map fromSqlString $ lines input
 		keepSpecs = sortBy (compare `on` minDiff) [ KeepSpec { howMany = 12, minDiff = 30 * 3600 * 24 }, KeepSpec { howMany = 4, minDiff = 7 * 3600 * 24 }, KeepSpec { howMany = 7, minDiff = 1 * 3600 * 18 } ]
-		deleteDateStrings = map toSqlString $ toDelete valid keepSpecs
-	in unlines deleteDateStrings
 
 main = interact extraBackups
