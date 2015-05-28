@@ -1,8 +1,15 @@
 # tmb
 
-A tool to identify backups to purge.
+A tool to identify backups to purge when you have Too Many Backups.
 
 ## Using
+
+Suppose you're making backups into timestamped directories using `rsync` or
+`btrfs subvolume snapshot`, for example.  Then you realize that you have Too
+Many Backups, and you decide that you want to keep the last seven daily
+backups, the last four weekly backups, and a year of monthly backups.
+
+`tmb` will tell you which backups to delete.
 
 ```
 $ ls /path/to/backups
@@ -60,5 +67,5 @@ $ runhaskell Setup.lhs install
 ## TODO
 
 * Convert date strings into objects containing date and original date string
-* Read keepSpecs as arguments
+* Read keepSpecs as arguments so seven daily, four weekly, and twelve monthly backups aren't hard-coded
 * Add tests
