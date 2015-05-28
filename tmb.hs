@@ -3,9 +3,11 @@ import Data.Function (on)
 import Data.DateTime
 import Data.Maybe
 
+type Seconds = Integer
+
 data KeepSpec = KeepSpec {
 	howMany :: Integer,
-	minDiff :: Integer
+	minDiff :: Seconds
 } deriving (Show)
 
 validDates :: [Maybe DateTime] -> [DateTime]
