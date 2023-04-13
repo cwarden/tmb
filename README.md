@@ -2,6 +2,8 @@
 
 A tool to identify backups to purge when you have Too Many Backups.
 
+See [tmb-go](https://github.com/cwarden/tmb-go) for a Go reimplementation.
+
 ## Using
 
 Suppose you're making backups into timestamped directories using `rsync` or
